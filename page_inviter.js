@@ -8,7 +8,7 @@ function click_show_mores() {
 	console.log("Quantidade de alvos localizados : " + anchors.length);
 	for (var j = 0; j < anchors.length; j++) {
 		console.log(anchors[j].innerText);
-		if (anchors[j].innerText == "Ver todos") {
+		if (anchors[j].innerText == "Mostrar mais") {
 			found = 1;
 			show_more = anchors[j];
 		}
@@ -41,14 +41,15 @@ function invite_that(some) {
 	}
 	some[0].click();
 
-	console.log("Aguardando para o próximo envio.. Preparando..");
+	console.log("Aguardando para o início do próximo envio !!");
+	console.log("Preparando o próximo envio ..");
 	console.log(some.length);
 	window.setTimeout(function() {
 		console.log("Envio de convite realizado !");
 		console.log(some.length);
 		invite_that(some.splice(1));
 		console.log(some.length);
-	}, 800);
+	}, 1600);
 }
 
 invite_that(invites);
