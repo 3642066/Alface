@@ -5,19 +5,19 @@ function click_show_mores() {
 	var found = 0;
 	var show_more = 0;
 	anchors=document.getElementsByTagName('a');
-	console.log("Number of Anchors " + anchors.length);
+	console.log("Quantidade de alvos localizados : " + anchors.length);
 	for (var j = 0; j < anchors.length; j++) {
 		console.log(anchors[j].innerText);
-		if (anchors[j].innerText == "Show More") {
+		if (anchors[j].innerText == "Ver todos") {
 			found = 1;
 			show_more = anchors[j];
 		}
 	}
 	if (!found) {
-		console.log("No more show_mores! :(")
+		console.log("Elementos de envio de convites não encontrados !")
 	} else {
 
-		console.log("Clicking show_more! :D");
+		console.log("Elementos encontrados e acionados com sucesso !");
 		show_more.click();
 		window.setTimeout(function() {
 			click_show_mores();
@@ -29,7 +29,7 @@ click_show_mores();
 
 console.log(inputs.length);
 for (var i= 0; i < inputs.length; i++) {
-	if(inputs[i].value == "Invite") {
+	if(inputs[i].value == "Convidar") {
 		invites.push(inputs[i]);
 	}
 }
@@ -41,10 +41,10 @@ function invite_that(some) {
 	}
 	some[0].click();
 
-	console.log("Here - Should follow with now!");
+	console.log("Aguardando para o próximo envio.. Preparando..");
 	console.log(some.length);
 	window.setTimeout(function() {
-		console.log("Now!");
+		console.log("Envio de convite realizado !");
 		console.log(some.length);
 		invite_that(some.splice(1));
 		console.log(some.length);
